@@ -1,0 +1,14 @@
+﻿<div class="topnav">
+    @Html.ActionLink("Página Principal", "Index", "Home")
+    @Html.ActionLink("Sobre", "About", "Home")
+    <a href="#contact">Contact</a>
+    @if (User.Identity.IsAuthenticated == true)
+    {
+        @Html.ActionLink("Fazer Logout", "Logout", "Authentication")
+    }
+    else
+    {
+        @Html.ActionLink("Fazer Login", "Login", "Authentication")
+    }
+</div>
+@RenderBody()

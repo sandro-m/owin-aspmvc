@@ -1,0 +1,15 @@
+﻿@model OwinWebApp.Models.Login
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Login</h2>
+@Html.ValidationSummary(true)
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    @Html.AntiForgeryToken()
+    <p>
+        <button type="submit">Login</button>
+    </p>
+}

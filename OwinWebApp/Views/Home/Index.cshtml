@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Index - Home</h2>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Você está logado!</p>
+}
+else
+{
+    <p>Você não está logado!</p>
+}
+@if (User.IsInRole("Admin")) {
+    <p>Você é Administrador</p>
+}
+else if (User.Identity.IsAuthenticated)
+{
+    <p>Você não é Administrador</p>
+}
+
+    
